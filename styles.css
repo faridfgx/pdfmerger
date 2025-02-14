@@ -1,0 +1,411 @@
+/* Base styles */
+:root {
+    --primary: #00f7ff;
+    --secondary: #2d3436;
+    --accent: #74b9ff;
+    --bg: #1e272e;
+    --error: #ff7675;
+    --success: #00b894;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: white;
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main container */
+[role="main"] {
+    width: 100%;
+    max-width: 1200px;  /* Increased from previous value */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Common width settings for components */
+#drop-zone,
+#file-list,
+.preview-wrapper,
+.settings-panel,
+.progress-wrapper {
+    width: 100%;
+    max-width: 1000px;  /* Increased from 600px */
+    margin: 20px auto;
+}
+
+/* Drop zone specific */
+#drop-zone {
+    height: 200px;
+    border: 2px dashed var(--primary);
+    border-radius: 15px;
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 247, 255, 0.05);
+}
+
+/* File list spacing */
+.file-item {
+    padding: 15px 20px;  /* Increased horizontal padding */
+    margin: 8px;  /* Increased from 5px */
+    background: rgba(116, 185, 255, 0.1);
+    border-radius: 8px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    gap: 15px;  /* Increased from 10px */
+}
+
+/* File name and size */
+.file-name {
+    flex-grow: 1;
+    font-size: 1rem;  /* Added explicit font size */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-size {
+    min-width: 80px;  /* Added minimum width */
+    text-align: right;
+}
+
+/* Settings panel improvements */
+/* Settings panel improvements */
+.settings-panel {
+    width: 100%;
+    max-width: 600px;  /* Reduced from 1000px for better readability */
+    margin: 20px auto;
+    padding: 25px;
+    background: rgba(45, 52, 54, 0.7);
+    border-radius: 15px;
+    text-align: center;  /* Center text */
+}
+
+.settings-panel h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.settings-group {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.settings-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 8px 15px;
+    color: white;
+    width: 200px;
+    text-align: center;
+}
+
+.settings-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 5px var(--primary);
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* Stats display */
+.stats {
+    font-size: 0.9em;
+    color: var(--accent);
+    margin-top: 15px;
+    text-align: center;
+}
+
+.settings-group {
+    margin: 15px 0;  /* Increased from 10px */
+}
+
+/* Button improvements */
+.merge-btn {
+    min-width: 200px;  /* Added minimum width */
+    padding: 15px 40px;  /* Increased horizontal padding */
+}
+
+.remove-btn {
+    padding: 8px 15px;  /* Increased horizontal padding */
+    min-width: 80px;  /* Added minimum width */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+}
+
+.file-input-wrapper {
+    margin: 20px 0;
+}
+
+.file-input-btn {
+    background: var(--primary);
+    color: var(--bg);
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+#pdfInput {
+    display: none;
+}
+
+#drop-zone {
+    width: 80%;
+    max-width: 600px;
+    height: 200px;
+    border: 2px dashed var(--primary);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 247, 255, 0.05);
+}
+
+#file-list {
+    width: 80%;
+    max-width: 600px;
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    background: rgba(45, 52, 54, 0.7);
+    border-radius: 10px;
+    min-height: 50px;
+}
+
+.file-item {
+    padding: 15px;
+    margin: 5px;
+    background: rgba(116, 185, 255, 0.1);
+    border-radius: 8px;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    gap: 10px;
+}
+
+.drag-handle {
+    cursor: move;
+    padding: 0 10px;
+    color: var(--primary);
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.file-name {
+    flex-grow: 1;
+    pointer-events: none;
+}
+
+.file-size {
+    color: var(--accent);
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.remove-btn {
+    background: transparent;
+    color: var(--error);
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.merge-btn {
+    background: var(--primary);
+    color: var(--bg);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Accessibility styles */
+:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Progress bar styles */
+.progress-wrapper {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin: 10px 0;
+    display: none;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Preview section */
+.preview-wrapper {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(45, 52, 54, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+}
+
+.preview-canvas {
+    width: 100%;
+    height: 300px;
+    background: white;
+    margin: 10px 0;
+}
+
+/* Settings panel */
+.settings-panel {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(45, 52, 54, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.settings-group {
+    margin: 10px 0;
+}
+
+.settings-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stats {
+    font-size: 0.9em;
+    color: var(--accent);
+    margin-top: 5px;
+}
+
+/* Animation states */
+.sortable-ghost {
+    opacity: 0.3;
+    background: var(--primary) !important;
+}
+
+.sortable-drag {
+    opacity: 0.9;
+    background: rgba(116, 185, 255, 0.4) !important;
+    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+}
+
+#drop-zone.dragover {
+    background: rgba(0, 247, 255, 0.1);
+    border-color: var(--accent);
+    transform: scale(1.02);
+}
+
+/* Spinner Animation */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 3px solid var(--bg);
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    0% { transform: translateY(-50%) rotate(0deg); }
+    100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Drop animation */
+@keyframes dropPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.drop-pulse {
+    animation: dropPulse 0.3s ease;
+}
